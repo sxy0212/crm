@@ -21,13 +21,14 @@
             v-on:deleteFn='deleteFn($event)'
         >
         </div-table>
-            <page-change 
+        <page-change 
             :total="total"
             :page="page"
             :page_size ="page_size"
             v-on:pageSizeChange='pageSizeChangeFn($event)'
             v-on:currentPageChange='currentPageChangeFn($event)'
-        ></page-change>
+            >
+        </page-change>
     </div>
     <el-dialog :title="bannerTitle" :visible.sync="addNow" v-move :close-on-click-modal=false :close-on-press-escape=false>
         <edit-dialog
@@ -174,7 +175,7 @@ export default {
                 type: 'warning'
             }).then(() => {
                 let conf = {
-                    url : '/api/api_backend.php?r=system-setting/template-del',
+                    url : '/api/api_backend.php?r=poster/post-del',
                     data : {
                         id:row.id
                     },
