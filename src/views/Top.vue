@@ -81,7 +81,7 @@ import store from '../vuex/store.js'
 </script>
 
 <style lang="scss" scoped >	
-	 #app .title{
+	#app .title{
 		color:#fff;
 	}
 	.title{
@@ -98,7 +98,6 @@ import store from '../vuex/store.js'
 		height:60px;
 	}
 	.drop{
-		display:inline-block;
 		float:right;
 		cursor:pointer;
 		color:#fff;
@@ -110,5 +109,5 @@ import store from '../vuex/store.js'
 			font-size:18px;
 		}
 	}
-
+	.el-pagination{text-align:center;}
 </style>

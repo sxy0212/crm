@@ -27,6 +27,7 @@ import expiredAccount from './views/nav5/expiredAccount.vue'
 import workSheet from './views/nav5/workSheet.vue'
 import suggest from './views/nav5/suggest.vue'
 import messageGroup from './views/nav5/messageGroup.vue'
+import advertisement from './views/nav6/advertisement.vue'
 import Page4 from './views/nav2/Page4.vue'
 import Page5 from './views/nav2/Page5.vue'
 // import Page6 from './views/nav3/Page6.vue'
@@ -232,6 +233,14 @@ let routes = [
     path: '/operatingEquipment',
     name: '运行设备',
     component: operatingEquipment,
+    meta: {
+      keepAlive: true
+    }
+  },
+  {
+    path: '/advertisement',
+    name: '广告添加',
+    component: advertisement,
     meta: {
       keepAlive: true
     }

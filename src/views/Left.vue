@@ -80,7 +80,11 @@
          <el-menu-item index="/suggest">
           <i class="fa fa-pencil-square-o"></i>
           <span slot="title">投诉建议</span>
-        </el-menu-item> 
+        </el-menu-item>
+        <el-menu-item index="/advertisement">
+          <i class="fa fa-plus-square"></i>
+          <span slot="title">广告添加</span>
+        </el-menu-item>  
        <!-- <el-menu-item index="/operatingEquipment">
           <i class="fa fa-cog"></i>
           <span slot="title">运行设备</span>
