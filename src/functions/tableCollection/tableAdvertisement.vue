@@ -16,7 +16,7 @@
           >
         </el-table-column>
         <el-table-column
-          prop="position_id"
+          prop="position_name"
           label="位置"
           >
         </el-table-column>
