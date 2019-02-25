@@ -76,37 +76,24 @@ export default {
 </script>
 
 <style>
-html,body,p,h1,h2,h3,h4,h5{ padding:0; margin:0;}
-#app {
-  font-family:'微软雅黑', 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background:#f2f2f2;
-}
-	#app .el-header{
-			padding:0 0;
-	}
-  #app a{
-    text-decoration: none;
-  }
-  .el-main{
-    background:#f2f2f2;
-  }
-  #tabs  .el-tabs__item{
-    font-size:2.2rem !important;
- }
- #tabs .el-tabs--border-card>.el-tabs__header .el-tabs__item.is-active{
-   background:none!important;
- }
- #tabs .el-table .cell{font-weight: bolder;line-height:45px !important;height:45px;}
- #tabs .el-tabs__nav-scroll{font-size:2.2rem !important;font-weight: bolder;}
-.suggest .el-dialog{width:820px;min-width:820px;}
- #dataShow .el-tabs__content{padding:0px;}
-  #dataShow .el-tabs--border-card>.el-tabs__header{background:#000;}
- #dataShow .el-tabs__header .el-tabs__item{color:#fff}
-  #dataShow .el-tabs--border-card>.el-tabs__header .el-tabs__item.is-active{color:#409EFF}
-  #dataShow .el-table__empty-block{background:#000}
-  #dataShow .el-table__empty-text{color:#fff}
-   #dataShow .el-table__body-wrapper{background:#000;color:#fff}
-  html,body,#app,.el-container{height:100%}
+html,body,p,h1,h2,h3,h4,h5{ padding:0; margin:0; }
+#app { font-family:'微软雅黑', 'Avenir', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; background:#f2f2f2; }
+#app .el-header{ padding:0 0; }
+#app a{ text-decoration: none; }
+.el-main{ background:#f2f2f2; }
+#tabs  .el-tabs__item{ font-size:2.2rem !important; }
+#tabs .el-tabs--border-card>.el-tabs__header .el-tabs__item.is-active{ background:none!important; }
+#tabs .el-table .cell{ font-weight: bolder;line-height:45px !important;height:45px; }
+#tabs .el-tabs__nav-scroll{ font-size:2.2rem !important;font-weight: bolder; }
+.suggest .el-dialog{ width:820px;min-width:820px; }
+#dataShow .el-tabs__content{ padding:0px; }
+#dataShow .el-tabs--border-card>.el-tabs__header{ background:#000; }
+#dataShow .el-tabs__header .el-tabs__item{ color:#fff; }
+#dataShow .el-tabs--border-card>.el-tabs__header .el-tabs__item.is-active{ color:#409EFF; }
+#dataShow .el-table__empty-block{ background:#000; }
+#dataShow .el-table__empty-text{ color:#fff; }
+#dataShow .el-table__body-wrapper{ background:#000;color:#fff; }
+html,body,#app,.el-container{ height:100%; }
+.el-pagination{ text-align:center; }
+.el-table .cell, .el-table th>.cell { text-align: center; }
 </style>

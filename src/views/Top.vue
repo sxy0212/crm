@@ -109,5 +109,5 @@ import store from '../vuex/store.js'
 			font-size:18px;
 		}
 	}
-	.el-pagination{text-align:center;}
+	
 </style>
