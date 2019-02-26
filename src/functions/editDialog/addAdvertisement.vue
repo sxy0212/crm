@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="addAdvertisement">
         <div>
            <el-form :model="formTitle">
                 <el-form-item label="客户名称" label-width="80px">
@@ -26,7 +26,7 @@
                         placeholder="选择日期">
                     </el-date-picker>
                 </el-form-item>
-                <el-form-item label="上传图片" label-width="80px">
+                <el-form-item label="上传图片" label-width="80px" class="uploadContent">
                     <el-upload
                         class="avatar-uploader"
                         action="/api/api_backend.php?r=poster/upload"
@@ -36,7 +36,11 @@
                         >
                         <img v-if="imageUrl" :src="imageUrl" class="avatar">
                         <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+                        
                     </el-upload>
+                    <span class="redUpload" v-if="formTitle.position_id == '1'">为了更好的展示效果，建议上传图片尺寸：90*50px</span>
+                    <span class="redUpload" v-if="formTitle.position_id == '2'">为了更好的展示效果，建议上传图片尺寸：1640*150px</span>
+                    <span class="redUpload" v-if="formTitle.position_id == '3'">为了更好的展示效果，建议上传图片尺寸：430*280px</span>
                 </el-form-item>
                 <el-form-item label="链接地址" label-width="80px">
                     <el-input v-model="formTitle.href" autocomplete="off"></el-input>
@@ -68,11 +72,11 @@ export default {
         'fieldsList',//多选选项
         'bannerTitle'
     ],
-    watch:{
-        imageUrl(){
-            return this.imageUrl
-        }
-    },
+    // watch:{
+    //     imageUrl(){
+    //         return this.imageUrl
+    //     }
+    // },
     methods:{
         cancelFn(){//更改菜单标题
             this.$emit("addNowChange",false)
@@ -85,13 +89,7 @@ export default {
             if( res.statusCode == 1 ){
                 this.formTitle.upload_name = res.info[0].upload_name
                 this.formTitle.save_path = res.info[0].save_path
-                console.log(this.imageUrl)
                 this.imageUrl = URL.createObjectURL(file.raw)
-                // if(this.bannerTitle == '添加广告'){
-                //     this.imageUrl = URL.createObjectURL(file.raw)
-                // }else if(this.bannerTitle == "编辑广告"){
-                //     this.imageUrl = 'http://agent.com'+res.info[0].save_path
-                // }
             }else {
                 Message({
                     message: res.message,
@@ -104,18 +102,18 @@ export default {
 }
 </script>
 
-<style rel="stylesheet/scss" lang="scss" scoped>
-.avatar-uploader .el-upload {
+<style>
+.addAdvertisement .avatar-uploader .el-upload {
     border: 1px dashed #d9d9d9;
     border-radius: 6px;
     cursor: pointer;
     position: relative;
     overflow: hidden;
 }
-.avatar-uploader .el-upload:hover {
+.addAdvertisement .avatar-uploader .el-upload:hover {
     border-color: #409EFF;
 }
-.avatar-uploader-icon {
+.addAdvertisement  .avatar-uploader-icon {
     font-size: 28px;
     color: #8c939d;
     width: 178px;
@@ -123,11 +121,13 @@ export default {
     line-height: 178px;
     text-align: center;
 }
-.avatar {
+.addAdvertisement  .avatar {
     width: 178px;
     height: 178px;
     display: block;
 }
+.addAdvertisement  .redUpload{color:red; font-weight:450;}
+.addAdvertisement .uploadContent .el-form-item__content{line-height:23px;}
 </style>
 
 
