@@ -72,11 +72,11 @@ export default {
         'fieldsList',//多选选项
         'bannerTitle'
     ],
-    // watch:{
-    //     imageUrl(){
-    //         return this.imageUrl
-    //     }
-    // },
+    watch:{
+        imageUrl(){
+            return this.imageUrl
+        }
+    },
     methods:{
         cancelFn(){//更改菜单标题
             this.$emit("addNowChange",false)
