@@ -97,7 +97,7 @@ export default {
                 success:(data)=>{
                     if( data.statusCode == 1 ){
                         this.tableData = data.info.info.map(item=>{
-                            item.save_path = '/api' + item.save_path  //图片加上域名
+                            item.save_path = "/api" + item.save_path  //图片加上域名
                             return item
                         })
                         this.total = Number( data.info.total_count )
