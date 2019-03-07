@@ -57,9 +57,10 @@
         </el-table-column>
         <el-table-column
           label="操作"
-          width="250"
+          width="265"
           >
           <template slot-scope="scope">
+            <el-button size="mini" type="primary" round @click="checkClickRate(scope.row)" v-show="templateUse">查看点击量</el-button>
             <el-button size="mini" type="success" round @click="editFn(scope.row)" v-show="templateUse">编辑</el-button>
             <el-button size="mini" type="danger" round @click="deleteFn(scope.row)" v-show="templateUse">删除</el-button>
           </template>
@@ -82,6 +83,9 @@ export default {
     },
     editFn(val){
       this.$emit('editFn',val)
+    },
+    checkClickRate(val){
+      this.$emit('checkClickRate',val)
     },
     downloadFn(val){
       this.$emit('downloadFn',val)

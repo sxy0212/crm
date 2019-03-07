@@ -28,6 +28,7 @@ import workSheet from './views/nav5/workSheet.vue'
 import suggest from './views/nav5/suggest.vue'
 import messageGroup from './views/nav5/messageGroup.vue'
 import advertisement from './views/nav6/advertisement.vue'
+import clickRateDetails from './views/nav6/clickRateDetails.vue'
 import Page4 from './views/nav2/Page4.vue'
 import Page5 from './views/nav2/Page5.vue'
 // import Page6 from './views/nav3/Page6.vue'
@@ -241,6 +242,14 @@ let routes = [
     path: '/advertisement',
     name: '广告添加',
     component: advertisement,
+    meta: {
+      keepAlive: true
+    }
+  },
+  {
+    path: '/clickRateDetails',
+    name: '点击量详情',
+    component: clickRateDetails,
     meta: {
       keepAlive: true
     }

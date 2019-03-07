@@ -7,7 +7,6 @@
     </el-breadcrumb>
 </div>
   <div class="cover templateMan">
-    
     <div> 
         <el-button type="success" @click='addFn(true)' class="addAdvertisement">添加广告</el-button>
     </div>
@@ -19,6 +18,7 @@
             :page_size ="page_size"
             v-on:editFn='editFn($event)'
             v-on:deleteFn='deleteFn($event)'
+            v-on:checkClickRate='checkClickRate($event)'
         >
         </div-table>
         <page-change 
@@ -52,6 +52,7 @@ import pageChange from '@/components/pageChange.vue'
 import  { axiosRequest } from '@/assets/js/Yt.js'
 import  { axiosParams } from '@/assets/js/Yt.js'
 import { Message } from 'element-ui'
+import router from '@/router.js'
 
 
 export default {
@@ -158,7 +159,6 @@ export default {
                 }
             }
             axiosRequest(conf)
-            
         },
         pageSizeChangeFn(val){
             this.page_size = val
@@ -250,6 +250,14 @@ export default {
                 }
             }
             axiosRequest(conf)
+        },
+        checkClickRate(row){   //查看点击量
+            router.push({
+                path:'/clickRateDetails/',
+                query:{
+                    id:row.id
+                }
+            })
         }
     }
 }
