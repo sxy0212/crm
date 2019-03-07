@@ -69,7 +69,7 @@ export default {
                 success:(data)=>{
                     if( data.statusCode == 1 ){
                         this.tableData = data.info.info 
-                        this.total = Number(data.info.total)
+                        this.total = Number(data.info.total_count)
                     }else {
                         Message({
                             message: data.message,
