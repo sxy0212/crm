@@ -29,6 +29,7 @@ import suggest from './views/nav5/suggest.vue'
 import messageGroup from './views/nav5/messageGroup.vue'
 import advertisement from './views/nav6/advertisement.vue'
 import clickRateDetails from './views/nav6/clickRateDetails.vue'
+import Complaints from './views/complaints/index.vue'
 import Page4 from './views/nav2/Page4.vue'
 import Page5 from './views/nav2/Page5.vue'
 // import Page6 from './views/nav3/Page6.vue'
@@ -222,12 +223,20 @@ let routes = [
       keepAlive: true
     }
   },
+  // {
+  //   path: '/suggest',
+  //   name: '投诉建议',
+  //   component: suggest,
+  //   meta: {
+  //     keepAlive: true
+  //   }
+  // },
   {
-    path: '/suggest',
+    path: '/complaints',
     name: '投诉建议',
-    component: suggest,
+    component: Complaints,
     meta: {
-      keepAlive: true
+      keepAlive:true
     }
   },
   {

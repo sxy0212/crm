@@ -77,10 +77,15 @@
           <i class="fa fa-id-card"></i>
           <span slot="title">业务员录入</span>
         </el-menu-item> 
-         <el-menu-item index="/suggest">
+         <!-- <el-menu-item index="/suggest">
+          <i class="fa fa-pencil-square-o"></i>
+          <span slot="title">投诉建议</span>
+        </el-menu-item> -->
+        <el-menu-item index="/complaints">
           <i class="fa fa-pencil-square-o"></i>
           <span slot="title">投诉建议</span>
         </el-menu-item>
+
         <el-menu-item index="/advertisement">
           <i class="fa fa-plus-square"></i>
           <span slot="title">广告添加</span>
