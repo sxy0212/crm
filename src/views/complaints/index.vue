@@ -24,7 +24,7 @@
                         <span v-else class="danger">已拒绝</span>
                     </template> 
                 </el-table-column> 
-                <el-table-column  label="操作" align="center" class="button"  v-if="status==null">
+                <el-table-column  label="操作" align="center" class="button"  v-if="status==1">
                     <template slot-scope="scope">
                         <el-button type="success" size="mini"  @click="submit(scope.row.id,2)" >采纳</el-button>
                         <el-button type="danger"  size="mini"  @click="submit(scope.row.id,3)" >拒绝</el-button>
@@ -55,7 +55,7 @@ export default {
                 page:1,
             }, 
             total:null,
-            status:null,
+            status:1,
         }
     },
     created() {
@@ -70,7 +70,7 @@ export default {
                 this.typeForm.type = num;
                 data.type =  this.typeForm.type;
                 data.page = 1;
-                this.status = 1;
+                this.status = num;
             } 
             const url = "/api_backend.php?r=new-suggestion/show";
             const conf = {
