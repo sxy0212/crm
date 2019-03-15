@@ -98,7 +98,7 @@ export default {
                 success:(data)=>{
                     if( data.statusCode == 1 ){
                         this.tableData = data.info.info.map(item=>{
-                            item.save_path = "/api" + item.save_path  //图片加上域名
+                            item.save_path =item.save_path  //图片加上域名
                             return item
                         })
                         this.total = Number( data.info.total_count )
@@ -148,7 +148,7 @@ export default {
                         this.id = row.id
                         let { custom_name,position_id,expire_time, href,upload_name,save_path} = data.info
                         this.formTitle = { custom_name,position_id,expire_time, href,upload_name,save_path}
-                        this.formTitle.imageUrl = "/api" + this.formTitle.save_path
+                        this.formTitle.imageUrl =  this.formTitle.save_path
                     }else {
                         Message({
                             message: data.message,

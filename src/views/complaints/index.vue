@@ -32,12 +32,14 @@
                 </el-table-column>
 
             </el-table>
-            <el-pagination
-                background
-                style="padding-top:15px"
-                layout="prev, pager, next"
+            <div class="block">
+                <el-pagination
+                @current-change="handleCurrentChange"
+                :current-page.sync="typeForm.page"
+                layout="total, prev, pager, next"
                 :total="total">
-            </el-pagination>
+                </el-pagination>
+            </div>
          </div>
     </div>
    </section>  
@@ -72,7 +74,7 @@ export default {
                 data.page = 1;
                 this.status = num;
             } 
-            const url = "/api_backend.php?r=new-suggestion/show";
+            const url = "/api/api_backend.php?r=new-suggestion/show";
             const conf = {
                 url,
                 data:data,
@@ -86,7 +88,7 @@ export default {
             axiosRequest(conf) 
         },
         submit(id,status){
-            const url = "/api_backend.php?r=new-suggestion/update";
+            const url = "/api/api_backend.php?r=new-suggestion/update";
             console.log(id,status);
             const conf = {
                 url,
@@ -105,6 +107,10 @@ export default {
                 }
             }
             axiosRequest(conf) 
+        },
+        handleCurrentChange(val){
+            this.typeForm.page = val
+            this.init(4)
         }
         
     }
