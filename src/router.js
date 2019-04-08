@@ -29,6 +29,7 @@ import suggest from './views/nav5/suggest.vue'
 import messageGroup from './views/nav5/messageGroup.vue'
 import advertisement from './views/nav6/advertisement.vue'
 import clickRateDetails from './views/nav6/clickRateDetails.vue'
+import versionNumber from './views/nav6/versionNumber.vue'
 import Complaints from './views/complaints/index.vue'
 import Page4 from './views/nav2/Page4.vue'
 import Page5 from './views/nav2/Page5.vue'
@@ -263,6 +264,14 @@ let routes = [
       keepAlive: true
     }
   },
+    {
+      path: '/versionNumber',
+      name: '系统版本号',
+      component: versionNumber,
+      meta: {
+        keepAlive: true
+      }
+    }
   
   // {
   //   path: '/login',
