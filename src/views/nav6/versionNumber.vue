@@ -8,56 +8,71 @@
 </div>
   <div class="cover templateMan">
     <div class="tableCover">
-      版本号:
-      <el-input style="width:300px" v-model="version"></el-input>
-       <el-button type="primary" @click="sure">确定</el-button>
+      <el-form :model="ruleForm2" status-icon  label-width="100px" class="demo-ruleForm">
+        <el-form-item label="版本号">
+          <el-input  v-model="ruleForm2.version" autocomplete="off" style="width:200px"></el-input>
+        </el-form-item>
+        <el-form-item label="密码">
+          <el-input type="password" v-model="ruleForm2.validation_surface" autocomplete="off" style="width:200px"  @keyup.enter.native='sure'></el-input>
+        </el-form-item>
+        <el-form-item>
+          <el-button type="primary" @click="sure">提交</el-button>
+        </el-form-item>
+      </el-form>
     </div>
    
   </div>
   </div>
-</template>
+</template> 
 <script>
 
 
 import  { axiosRequest} from '@/assets/js/Yt.js'
 import { Message } from 'element-ui'
 import router from '@/router.js'
-
-
-export default {
+ export default {
     data() {
-        return {
-           version:""
-        }
+      return {
+        ruleForm2: {
+          version: '',
+          validation_surface: '',
+        },
+      };
     },
-    created(){
-        this.init()
+    mounted() {
+      this.init()
     },
     methods: {
-        init(){
+       init(){
             const conf = {
-                url : '/api/batch.php?r=system-version/index',
+                url : '/api/api_backend.php?r=system-version/index',
                 success:(data)=>{
-                   this.version  = data.info
+                   this.ruleForm2.version  = data.info
                 }
             }
             axiosRequest(conf)
         },
         sure(){
-             const conf = {
-                url : '/api/batch.php?r=system-version/index',
+          if(!this.ruleForm2.version||!this.ruleForm2.validation_surface){
+            this.$alert('版本号或者密码不能为空!')
+          }else{
+            const conf = {
+                url : '/api/api_backend.php?r=system-version/index',
                 data:{
-                  system_version:this.version
+                  system_version:this.ruleForm2.version,
+                  validation_surface:this.ruleForm2.validation_surface
                 },
                 success:(data)=>{
                   this.$alert(data.message)
                   this.init()
+                  this.ruleForm2.validation_surface = ''
                 }
             }
             axiosRequest(conf)
+          }
         },
     }
-}
+  }
 </script>
 <style scoped>
 .addAdvertisement{margin-bottom:15px;}
