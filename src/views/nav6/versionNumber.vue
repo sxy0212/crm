@@ -12,6 +12,9 @@
         <el-form-item label="版本号">
           <el-input  v-model="ruleForm2.version" autocomplete="off" style="width:200px"></el-input>
         </el-form-item>
+        <el-form-item label="更新说明">
+          <el-input  v-model="ruleForm2.update_instructions" autocomplete="off" style="width:200px"></el-input>
+        </el-form-item>
         <el-form-item label="密码">
           <el-input type="password" v-model="ruleForm2.validation_surface" autocomplete="off" style="width:200px"  @keyup.enter.native='sure'></el-input>
         </el-form-item>
@@ -35,6 +38,7 @@ import router from '@/router.js'
       return {
         ruleForm2: {
           version: '',
+          update_instructions:"",
           validation_surface: '',
         },
       };
@@ -47,7 +51,8 @@ import router from '@/router.js'
             const conf = {
                 url : '/api/api_backend.php?r=system-version/index',
                 success:(data)=>{
-                   this.ruleForm2.version  = data.info
+                   this.ruleForm2.version  = data.info.system_version
+                   this.ruleForm2.update_instructions = data.info.update_instructions
                 }
             }
             axiosRequest(conf)
@@ -60,6 +65,7 @@ import router from '@/router.js'
                 url : '/api/api_backend.php?r=system-version/index',
                 data:{
                   system_version:this.ruleForm2.version,
+                  update_instructions:this.ruleForm2.update_instructions,
                   validation_surface:this.ruleForm2.validation_surface
                 },
                 success:(data)=>{
