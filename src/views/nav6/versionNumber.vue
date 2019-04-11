@@ -13,7 +13,7 @@
           <el-input  v-model="ruleForm2.version" autocomplete="off" style="width:200px"></el-input>
         </el-form-item>
         <el-form-item label="更新说明">
-          <el-input  v-model="ruleForm2.update_instructions" autocomplete="off" style="width:200px"></el-input>
+          <el-input  v-model="ruleForm2.update_instructions" autocomplete="off" style="width:200px" type="textarea" :rows="5"></el-input>
         </el-form-item>
         <el-form-item label="密码">
           <el-input type="password" v-model="ruleForm2.validation_surface" autocomplete="off" style="width:200px"  @keyup.enter.native='sure'></el-input>
