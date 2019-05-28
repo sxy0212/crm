@@ -10,7 +10,7 @@
           <el-table-column type="index" label="序号" width="60" :index="index" align="center"></el-table-column>
           <el-table-column prop="domain_name" label="域名" align="center"></el-table-column>  
           <el-table-column prop="ip" label="IP地址" align="center"></el-table-column>
-          <el-table-column prop="root_pwd" label="root密码" align="center"></el-table-column>
+          <!--<el-table-column prop="root_pwd" label="root密码" align="center"></el-table-column>-->
           <el-table-column prop="server_type" label="服务器类别" align="center">
             <template slot-scope="scope">
               <span v-for="(item,index) in device" :key="index" v-show="scope.row.server_type == item.key">
@@ -25,7 +25,7 @@
               </span>
             </template> 
           </el-table-column> 
-          <el-table-column prop="ssh_port" label="ssh端口" align="center"></el-table-column> 
+          <!--<el-table-column prop="ssh_port" label="ssh端口" align="center"></el-table-column> -->
           <el-table-column prop="os" label="操作系统" align="center">
             <template slot-scope="scope">
               <span v-for="(item,index) in os" :key="index" v-show="scope.row.os == item.key">

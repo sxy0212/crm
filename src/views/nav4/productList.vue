@@ -278,7 +278,7 @@
         axiosRequest(conf)
       },
       saveChange(){
-        const url = "/api/api_backend.php?r=product-info/product-change"
+        const url = "/api_backend.php?r=product-info/product-change"
         const data = this.editData
         data.action = "edit"
         if(this.edit_priceO == ''&&this.edit_priceT == ''){

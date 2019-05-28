@@ -38,7 +38,7 @@
         this.logining = true
         const username = this.ruleForm2.username
         const password = this.ruleForm2.password
-        const url = "/api/api_backend.php?r=index/checklogin"
+        const url = "/api_backend.php?r=index/checklogin"
         const conf = {
           url,
           data:{

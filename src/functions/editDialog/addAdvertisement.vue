@@ -29,7 +29,7 @@
                 <el-form-item label="上传图片" label-width="80px" class="uploadContent">
                     <el-upload
                         class="avatar-uploader"
-                        action="/api/api_backend.php?r=poster/upload"
+                        action="/api_backend.php?r=poster/upload"
                         :show-file-list="false"
                         accept=".gif,.jpg,.jpeg,.gif,.png,.bmp"
                         :on-success="handleAvatarSuccess"

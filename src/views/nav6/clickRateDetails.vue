@@ -60,7 +60,7 @@ export default {
     methods: {
         init(){
             const conf = {
-                url : '/api/api_backend.php?r=poster/post-stat',
+                url : '/api_backend.php?r=poster/post-stat',
                 data:{
                     page:this.page,
                     page_size:this.page_size,

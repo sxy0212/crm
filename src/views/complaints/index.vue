@@ -74,7 +74,7 @@ export default {
                 data.page = 1;
                 this.status = num;
             } 
-            const url = "/api/api_backend.php?r=new-suggestion/show";
+            const url = "/api_backend.php?r=new-suggestion/show";
             const conf = {
                 url,
                 data:data,
@@ -88,7 +88,7 @@ export default {
             axiosRequest(conf) 
         },
         submit(id,status){
-            const url = "/api/api_backend.php?r=new-suggestion/update";
+            const url = "/api_backend.php?r=new-suggestion/update";
             console.log(id,status);
             const conf = {
                 url,

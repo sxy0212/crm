@@ -87,7 +87,7 @@ import router from '@/router.js'
     methods: {
        init(){
             const conf = {
-                url : '/api/api_backend.php?r=system-version/index',
+                url : '/api_backend.php?r=system-version/index',
                 success:(data)=>{
                    this.ios_version = JSON.parse(data.info.ios_version)
                    this.ios_version.is_mandatory_update  = Number(JSON.parse(data.info.ios_version).is_mandatory_update)
@@ -100,7 +100,7 @@ import router from '@/router.js'
         // 这是安卓设备的更新说明
         sure(){
             const conf = {
-                url : '/api/api_backend.php?r=system-version/index',
+                url : '/api_backend.php?r=system-version/index',
                 data:{
                   ios_version:JSON.stringify(this.ios_version),
                   android_version:JSON.stringify(this.android_version),

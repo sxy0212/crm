@@ -138,7 +138,7 @@ import {axiosRequest} from '@/assets/js/Yt.js'
 				console.log('submit!');
 			},
        getCityLists(){
-         const url ="/api/api_backend.php?r=mobile-export/init"
+         const url ="/api_backend.php?r=mobile-export/init"
           const conf = {
             url,
             success:(data)=>{
