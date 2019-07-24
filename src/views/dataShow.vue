@@ -3,7 +3,7 @@
 		<div class="title">
       言通智能机器人-信息公告板
     </div>
-    <div id="tabs" style="height:500px;">
+    <div id="tabs">
       <el-tabs v-model="activeName"  @tab-click=" handleBtnClick" type="border-card">
           <el-tab-pane label="余额告警客户" name="1">
             <el-table :data="tableData1"  stripe style="width: 100%;" border stripe height="800" v-loading="loading" :header-cell-style="RowStyle" header-row-class-name="table" :cell-style="RowStyle" >
@@ -40,15 +40,41 @@
                 <el-table-column prop="per_sec_count" label="每日通话时长" align="center"></el-table-column>
             </el-table>
           </el-tab-pane>
-          <!--<el-tab-pane label="工单报障" name="4">
-            <el-table :data="tableData4" stripe style="width: 100%" border stripe height="400">
-                <el-table-column type="index" label="序号" width="60" align="center"></el-table-column>                   
-                <el-table-column prop="name" label="客户名称" align="center"></el-table-column>
-                <el-table-column prop="sale" label="业务员"align="center"></el-table-column>
-                <el-table-column prop="num" label="售后小组" align="center"></el-table-column>
-                <el-table-column prop="money" label="余额" align="center"></el-table-column>
-            </el-table>
-          </el-tab-pane>-->
+          <el-tab-pane label="线路资费" name="5">
+              <div style="height:800px;color: #fff;background: #000;font-size: 30px;">
+                <div style="margin: 0 auto;width: 900px;">
+                  <div style="margin-bottom:20px;padding-top:20px;">
+                    <p>催收本人前期:1毛2 </p>
+                    <p>催收本人中后期:1毛5（线路紧缺）</p>
+                  </div>
+                  
+                  <p>游戏推广(不含博彩,赌博类):1毛</p>
+                  <div style="margin:20px 0;">
+                    <p>股票:1毛4</p>
+                    <p>流量股票:1毛5</p>
+                  </div>
+                  
+                  <div style="margin:20px 0;">
+                    <p>贷款:1毛1</p>
+                    <p>流量贷款:1毛2</p>
+                  </div>
+                 
+                  <div style="margin:20px 0;">
+                    <p>保健品:1毛</p>
+                    <p>收藏品:1毛2（线路紧缺）</p>
+                  </div>
+                 
+                  <div>
+                     <p>非金融正规：</p>
+                     <p>20并发内正规量乱显:最低8分</p>
+                     <p>50并发内正规量小号:最低8分  月租10元/号/线(小号更换，当月补交一个月月租)</p>
+                     <p>超20并发房产,考证培训:9分做</p>
+                  </div>
+                   <p style="background: yellow;color: #000;margin-top:30px;">涉及黄赌毒,代开发票,代办假证,棋牌麻将类游戏等,线路自备.</p>
+                </div>
+                
+              </div>
+          </el-tab-pane>
       </el-tabs>
     </div>
      
@@ -195,10 +221,10 @@
            }
             console.log(this.page3)
           this.init3()
-        }else if (this.activeName >= 4){
+        }else if (this.activeName == 4){
           this.init4()
+        }else if (this.activeName >= 5){
           this.num = 0
-          // console.log(3333)
         }
         // else if(this.activeName > 3){
         //   // console.log(4444)
